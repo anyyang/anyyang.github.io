@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS-каналы"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Поиск"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://liuyang.website"></form>
@@ -67,6 +67,54 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-mysqlsqlmode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/08/mysqlsqlmode/" class="article-date">
+  <time datetime="2017-08-08T05:02:52.000Z" itemprop="datePublished">2017-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/08/mysqlsqlmode/">由Mydsql datetime的默认值不能为0000-00-00 00：00：00引出的sqlmode问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="sqlmode-的引起的异常"><a href="#sqlmode-的引起的异常" class="headerlink" title="sqlmode 的引起的异常"></a>sqlmode 的引起的异常</h2><p>  最近在导入数据库的时候，一直没有成功， 没成功的原因在于mysql5.7.18（我所使用的版本）中不允许字段中的datetime或者timestamp格式的字段的默认值为0000-00-00 00：00：00。所以每次导入的时候，都提示非法的默认值 for  字段名。 </p>
+<h2 id="问题引起的原因"><a href="#问题引起的原因" class="headerlink" title="问题引起的原因"></a>问题引起的原因</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html" target="_blank" rel="external">sql_mode</a><br>mysql数据库sqlmode中设置了严格模式。  这种模式mysql在执行前会进行严格的sql校验判断。所以会爆出这个错误。</p>
+<blockquote>
+<p> Strict mode controls how MySQL handles invalid or missing values in data-change statements such as INSERT or UPDATE. A value can be invalid for several reasons. For example, it might have the wrong data type for the column, or it might be out of range. A value is missing when a new row to be inserted does not contain a value for a non-NULL column that has no explicit DEFAULT clause in its definition. (For a NULL column, NULL is inserted if the value is missing.) Strict mode also affects DDL statements such as CREATE TABLE.</p>
+</blockquote>
+<h2 id="sqlmode的常见级别"><a href="#sqlmode的常见级别" class="headerlink" title="sqlmode的常见级别"></a>sqlmode的常见级别</h2><h2 id="sqlmode-的设置"><a href="#sqlmode-的设置" class="headerlink" title="sqlmode 的设置"></a>sqlmode 的设置</h2><p>  查看当前系统的sql_mode:  select @@sql_mode;  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://liuyang.website/2017/08/08/mysqlsqlmode/" data-id="cj636j62n0000jwv2wmb44eeh" class="article-share-link">Поделиться</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql-sqlmode/">mysql sqlmode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-一个程序员的焦虑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -120,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuyang.website/2017/07/21/一个程序员的焦虑/" data-id="cj5dng4bk0000r4toxcwxhf8e" class="article-share-link">Share</a>
+      <a data-url="http://liuyang.website/2017/07/21/一个程序员的焦虑/" data-id="cj636j62s0001jwv2k2cnbgpt" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心情/">心情</a></li></ul>
@@ -139,9 +187,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Категории</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li></ul>
     </div>
   </div>
 
@@ -149,9 +197,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Метки</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql-sqlmode/">mysql sqlmode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li></ul>
     </div>
   </div>
 
@@ -159,18 +207,18 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Облако меток</h3>
     <div class="widget tagcloud">
-      <a href="/tags/心情/" style="font-size: 10px;">心情</a>
+      <a href="/tags/mysql-sqlmode/" style="font-size: 10px;">mysql sqlmode</a> <a href="/tags/心情/" style="font-size: 10px;">心情</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Архив</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
     </div>
   </div>
 
@@ -178,9 +226,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Недавние записи</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/08/08/mysqlsqlmode/">由Mydsql datetime的默认值不能为0000-00-00 00：00：00引出的sqlmode问题</a>
+          </li>
         
           <li>
             <a href="/2017/07/21/一个程序员的焦虑/">一个程序员的焦虑</a>
@@ -199,7 +251,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Liu Yang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Создано с помощью <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
