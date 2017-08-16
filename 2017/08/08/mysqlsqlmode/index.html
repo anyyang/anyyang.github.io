@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://liuyang.website/2017/08/08/mysqlsqlmode/index.html">
 <meta property="og:site_name" content="LiuyangWork">
 <meta property="og:description" content="sqlmode 的引起的异常  最近在导入数据库的时候，一直没有成功， 没成功的原因在于mysql5.7.18（我所使用的版本）中不允许字段中的datetime或者timestamp格式的字段的默认值为0000-00-00 00：00：00。所以每次导入的时候，都提示非法的默认值 for  字段名。  问题引起的原因sql_modemysql数据库sqlmode中设置了严格模式。  这种模式mys">
-<meta property="og:updated_time" content="2017-08-16T10:47:12.391Z">
+<meta property="og:updated_time" content="2017-08-16T10:48:48.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由Mydsql datetime的默认值不能为0000-00-00 00：00：00引出的sqlmode问题">
 <meta name="twitter:description" content="sqlmode 的引起的异常  最近在导入数据库的时候，一直没有成功， 没成功的原因在于mysql5.7.18（我所使用的版本）中不允许字段中的datetime或者timestamp格式的字段的默认值为0000-00-00 00：00：00。所以每次导入的时候，都提示非法的默认值 for  字段名。  问题引起的原因sql_modemysql数据库sqlmode中设置了严格模式。  这种模式mys">
@@ -59,7 +59,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://liuyang.website"></form>
@@ -104,12 +104,12 @@
 <li>NO_ZERO_IN_DATE：在严格模式下，不允许日期和月份为零</li>
 <li>NO_ZERO_DATE：设置该值，mysql数据库不允许插入零日期，插入零日期会抛出错误而不是警告。<br>STRICT_TRANS_TABLES模式：严格模式，进行数据的严格校验，错误数据不能插入，报error错误。<br>ANSI    更改语法和行为，使其更符合标准SQL。</li>
 </ul>
-<h2 id="sqlmode-的设置"><a href="#sqlmode-的设置" class="headerlink" title="sqlmode 的设置"></a>sqlmode 的设置</h2><p>  查看当前系统的sql_mode:  select @@sql_mode;  </p>
+<h2 id="sqlmode-的设置"><a href="#sqlmode-的设置" class="headerlink" title="sqlmode 的设置"></a>sqlmode 的设置</h2><p>  查看当前系统的sql_mode:  select @@sql_mode;<br>在my.cnf或者my.ini添加如下配置<br>[mysqld]<br>sql_mode=’ONLY_FULL_GROUP_BY,NO_AUTO_VALUE_ON_ZERO,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,<br>ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,PIPES_AS_CONCAT,ANSI_QUOTES’<br>或者<br> set global sql_mode=’’</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuyang.website/2017/08/08/mysqlsqlmode/" data-id="cj6ew81vj0000m8v2uk8exf73" class="article-share-link">Share</a>
+      <a data-url="http://liuyang.website/2017/08/08/mysqlsqlmode/" data-id="cj6ew9lnc0001x0v2v59pojet" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql-sqlmode/">mysql sqlmode</a></li></ul>
@@ -137,7 +137,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorier</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li></ul>
     </div>
@@ -166,7 +166,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
     </div>
@@ -176,7 +176,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
