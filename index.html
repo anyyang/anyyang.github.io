@@ -151,6 +151,73 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2017/08/23/java对象排序/">
+                Java对象排序
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-08-23</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/java/">java</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="Java对象排序"><a href="#Java对象排序" class="headerlink" title="Java对象排序"></a>Java对象排序</h2><blockquote>
+<p> public class  TicketComparator implements Comparator{<br>     public  int compare(Object  obj1, Object obj2 ){<br>      PlatformActivitiesJoin join1 = (PlatformActivitiesJoin)obj1;<br>      PlatformActivitiesJoin join2 = (PlatformActivitiesJoin)obj2;<br>      if(join1.getVote()&gt;join2.getVote()){<br>          return -1;<br>      }<br>         return 1;<br>      }</p>
+</blockquote>
+<pre><code>public static void main(String[] args){          
+    PlatformActivitiesJoin u1 =new PlatformActivitiesJoin();
+    u1.setVote(100);
+    PlatformActivitiesJoin u2 =new PlatformActivitiesJoin();
+    u2.setVote(200);
+    PlatformActivitiesJoin u3 =new PlatformActivitiesJoin();
+    u3.setVote(500);
+    PlatformActivitiesJoin u4 =new PlatformActivitiesJoin();
+    u4.setVote(300);  
+     ArrayList arrayList = new ArrayList();
+     arrayList.add(u1);
+     arrayList.add(u2);
+     arrayList.add(u3);
+     arrayList.add(u4);  
+     Object[] users =arrayList.toArray();
+     System.out.println (&quot;排序前。。。。&quot;);
+     for (int i = 0; i&lt;users.length; i++){
+      System.out.println (users[i]);
+     }
+     System.out.println (&quot;*******************************&quot;);
+     System.out.println (&quot;排序后。。。。。&quot;);
+     //把排序规则交给sort方法。该方法就回按照你自定义的规则进行排序
+     java.util.Arrays.sort(users,new TicketComparator());  
+      for (int i = 0; i&lt;users.length; i++){
+        System.out.println (users[i]);
+     }
+
+   }
+</code></pre><h2 id="result"><a href="#result" class="headerlink" title="result"></a>result</h2><blockquote>
+<p>  排序前。。。。<br>   PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=200, imgsrclist=[])<br>   PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=500, imgsrclist=[])<br>   PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=300, imgsrclist=[])</p>
+<hr>
+<pre><code>排序后。。。。。
+</code></pre><p> PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=500, imgsrclist=[])<br>PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=300, imgsrclist=[])<br>PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=200, imgsrclist=[])<br>PlatformActivitiesJoin(id=null, platformActivitiesId=null, userId=null, addTime=null, state=0, email=null, nickname=null, avatar=null, topicTitle=null, inActivityDate=null, imgsrcs=null, albumcover=null, index=null, vote=100, imgsrclist=[])</p>
+</blockquote>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2017/08/19/Jstl标签/">
                 jstl标签
             </a>
@@ -302,6 +369,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2017/08/23/java对象排序/">Java对象排序</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2017/08/19/Jstl标签/">jstl标签</a>
             </li>
             
@@ -324,11 +395,15 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/mysql/">mysql</a>
+            <a class="footer-post" href="/categories/jstl/">jstl</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/jstl/">jstl</a>
+            <a class="footer-post" href="/categories/java/">java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/mysql/">mysql</a>
         </li>
         
         <li>
